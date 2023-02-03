@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["chakra", "ecommerce", "esnext"]
+  "cSpell.words": ["chakra", "ecommerce", "esnext"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

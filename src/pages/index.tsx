@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Heading } from '@chakra-ui/react'
+import { Heading, Button, Box } from '@chakra-ui/react'
 
 export default function Home() {
   return (
@@ -11,7 +11,21 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <Heading>We got Chakra UI</Heading>
+        <Heading as='h3' size='sm'>
+          We got Chakra UI!
+        </Heading>
+        <Button
+          onClick={() => {
+            alert('Hello')
+          }}
+          colorScheme='blue'
+          size='lg'
+        >
+          Button
+        </Button>
+        <Box bg='tomato' w='100%' p={4} color='white'>
+          This is the box
+        </Box>
       </main>
     </>
   )
