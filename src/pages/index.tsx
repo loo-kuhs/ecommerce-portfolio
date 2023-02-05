@@ -20,7 +20,6 @@ type Props = {
 }
 
 export default function Home({ products }: Props) {
-  console.log(products)
   return (
     <>
       <Head>
@@ -30,6 +29,7 @@ export default function Home({ products }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
+        <Button>Button</Button>
         <ol>
           {products.map((product) => {
             return <li key={product.id}><strong>{product.title}</strong></li>
