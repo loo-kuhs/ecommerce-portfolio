@@ -4,6 +4,7 @@
     "chakra",
     "ecommerce",
     "esnext",
+    "fontsource",
     "Oleh"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
