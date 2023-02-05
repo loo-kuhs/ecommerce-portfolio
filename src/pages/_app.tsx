@@ -1,6 +1,7 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
 import '@fontsource/spartan/400.css'
+import '@fontsource/spartan/700.css'
 
 const theme = extendTheme({
   fonts: {
