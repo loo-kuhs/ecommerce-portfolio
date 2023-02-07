@@ -1,6 +1,8 @@
 import Head from 'next/head'
+
 import { GetServerSidePropsContext } from 'next'
-import { Heading, Button, Box } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
+import { Header } from '@/components/Header'
 
 type Product = {
   id: number
@@ -29,10 +31,15 @@ export default function Home({ products }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
+        <Header />
         <Button>Button</Button>
         <ol>
           {products.map((product) => {
-            return <li key={product.id}><strong>{product.title}</strong></li>
+            return (
+              <li key={product.id}>
+                <strong>{product.title}</strong>
+              </li>
+            )
           })}
         </ol>
       </main>
