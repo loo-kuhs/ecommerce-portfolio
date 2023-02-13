@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 import { Header } from '@/components/Header'
-import { Button } from '@chakra-ui/react'
-import { GetServerSidePropsContext } from 'next'
 import { TopBar } from '@/components/TopBar'
+import { Grid, GridItem } from '@chakra-ui/react'
+import { GetServerSidePropsContext } from 'next'
 
 type Product = {
   id: number
@@ -18,11 +18,18 @@ type Product = {
   }
 }
 
+type Categories =
+  | 'electronics'
+  | 'jewelry'
+  | "men's clothing"
+  | "women's clothing"
+
 type Props = {
   products: Product[]
+  categories: Categories[]
 }
 
-export default function Home({ products }: Props) {
+export default function Home({ products, categories }: Props) {
   return (
     <>
       <Head>
@@ -34,8 +41,18 @@ export default function Home({ products }: Props) {
       <main>
         <TopBar />
         <Header />
-        <Button>Button</Button>
-        <ol>
+
+        <Grid templateColumns='540px 255px 255px' templateRows='200px 260px'>
+          {categories.map((category, key) => {
+            return (
+              <GridItem w='100%' h='10' bg='blue.500' key={key}>
+                <p>{category}</p>
+              </GridItem>
+            )
+          })}
+        </Grid>
+
+        {/* <ol>
           {products.map((product) => {
             return (
               <li key={product.id}>
@@ -43,7 +60,7 @@ export default function Home({ products }: Props) {
               </li>
             )
           })}
-        </ol>
+        </ol> */}
       </main>
     </>
   )
@@ -53,7 +70,11 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const products = await fetch('https://fakestoreapi.com/products').then(
     (res) => res.json()
   )
+  const categories = await fetch(
+    'https://fakestoreapi.com/products/categories'
+  ).then((res) => res.json())
+
   return {
-    props: { products },
+    props: { products, categories },
   }
 }
