@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Header } from '@/components/Header'
 import { Button } from '@chakra-ui/react'
 import { GetServerSidePropsContext } from 'next'
+import { TopBar } from '@/components/TopBar'
 
 type Product = {
   id: number
@@ -31,6 +32,7 @@ export default function Home({ products }: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
+        <TopBar />
         <Header />
         <Button>Button</Button>
         <ol>

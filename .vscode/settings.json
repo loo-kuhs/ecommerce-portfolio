@@ -5,6 +5,7 @@
     "ecommerce",
     "esnext",
     "fontsource",
+    "Khreshchatyk",
     "Oleh"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
