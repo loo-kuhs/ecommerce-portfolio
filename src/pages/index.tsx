@@ -2,8 +2,10 @@ import Head from 'next/head'
 
 import { Header } from '@/components/Header'
 import { TopBar } from '@/components/TopBar'
+import { slugify } from '@/utils/slugify'
 import { Grid, GridItem } from '@chakra-ui/react'
 import { GetServerSidePropsContext } from 'next'
+import Image from 'next/image'
 
 type Product = {
   id: number
@@ -42,11 +44,53 @@ export default function Home({ products, categories }: Props) {
         <TopBar />
         <Header />
 
-        <Grid templateColumns='540px 255px 255px' templateRows='200px 260px'>
+        <Grid
+          gap='1rem'
+          templateColumns='540px 255px 255px'
+          templateRows='200px 260px'
+        >
           {categories.map((category, key) => {
+            const slugifiedCategory = slugify(category)
+            const imgCategoryUrl = `/images/pic-categories-${slugifiedCategory}.jpg`
+
+            if (key === 0) {
+              return (
+                <GridItem
+                  bg='red.500'
+                  h='100%'
+                  position='relative'
+                  rowSpan={2}
+                  w='100%'
+                  key={key}
+                >
+                  <Image src={imgCategoryUrl} alt={category} fill={true} />
+                </GridItem>
+              )
+            }
+
+            if (key === categories.length - 1) {
+              return (
+                <GridItem
+                  bg='gray.500'
+                  colSpan={2}
+                  h='100%'
+                  position='relative'
+                  w='100%'
+                  key={key}
+                >
+                  <Image src={imgCategoryUrl} alt={category} fill={true} />
+                </GridItem>
+              )
+            }
             return (
-              <GridItem w='100%' h='10' bg='blue.500' key={key}>
-                <p>{category}</p>
+              <GridItem
+                bg='blue.500'
+                h='100%'
+                position='relative'
+                w='100%'
+                key={key}
+              >
+                <Image src={imgCategoryUrl} alt={category} fill={true} />
               </GridItem>
             )
           })}

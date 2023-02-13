@@ -6,7 +6,8 @@
     "esnext",
     "fontsource",
     "Khreshchatyk",
-    "Oleh"
+    "Oleh",
+    "slugified"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
 }

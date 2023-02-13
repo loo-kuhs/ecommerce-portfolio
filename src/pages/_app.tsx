@@ -1,5 +1,7 @@
 import {
-  ChakraProvider, defineStyleConfig, extendTheme
+  ChakraProvider,
+  defineStyleConfig,
+  extendTheme
 } from '@chakra-ui/react'
 import '@fontsource/spartan/400.css'
 import '@fontsource/spartan/700.css'
