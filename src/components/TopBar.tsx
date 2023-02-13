@@ -8,7 +8,7 @@ export const TopBar = () => {
       bg='black'
       color='white'
       fontSize='xs'
-      justifyContent={'space-between'}
+      justifyContent='space-between'
       p={2}
       w='100%'
     >
