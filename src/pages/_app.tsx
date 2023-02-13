@@ -1,11 +1,9 @@
-import type { AppProps } from 'next/app'
 import {
-  ChakraProvider,
-  extendTheme,
-  defineStyleConfig,
+  ChakraProvider, defineStyleConfig, extendTheme
 } from '@chakra-ui/react'
 import '@fontsource/spartan/400.css'
 import '@fontsource/spartan/700.css'
+import type { AppProps } from 'next/app'
 
 export const buttonTheme = defineStyleConfig({
   baseStyle: {

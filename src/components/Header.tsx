@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const Header = () => {
   return (
     <header>
-      <Image src='' alt='' width={100} height={48} />
+      <Image src='/images/logo.svg' alt='' width={100} height={48} />
       <nav>
         <ul>
           <li>
@@ -34,22 +34,22 @@ export const Header = () => {
         <ul>
           <li>
             <Link href='#'>
-              <Image src='/' alt='' width={24} height={24} />
+              <Image src='/icon/ico-search.svg' alt='' width={24} height={24} />
             </Link>
           </li>
           <li>
             <Link href='#'>
-              <Image src='/' alt='' width={24} height={24} />
+              <Image src='/icon/ico-globe.svg' alt='' width={24} height={24} />
             </Link>
           </li>
           <li>
             <Link href='#'>
-              <Image src='/' alt='' width={24} height={24} />
+              <Image src='/icon/ico-user.svg' alt='' width={24} height={24} />
             </Link>
           </li>
           <li>
             <Link href='#'>
-              <Image src='/' alt='' width={24} height={24} />
+              <Image src='/icon/ico-bag.svg' alt='' width={24} height={24} />
             </Link>
           </li>
         </ul>
