@@ -1,6 +1,7 @@
-import { Flex } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { Flex } from '@chakra-ui/react'
 
 export const TopBar = () => {
   return (
@@ -10,8 +11,7 @@ export const TopBar = () => {
       fontSize='xs'
       justifyContent='space-between'
       p={2}
-      w='100%'
-    >
+      w='100%'>
       <Flex gap='1.5rem'>
         <Flex as={Link} href='#' alignItems='center' gap='0.5rem'>
           <Image
