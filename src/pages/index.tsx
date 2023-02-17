@@ -1,61 +1,16 @@
-import { Header } from '@/components/Header'
-import { TopBar } from '@/components/TopBar'
-import { slugify } from '@/utils/slugify'
-import { Box, Flex, Grid, GridItem } from '@chakra-ui/react'
 import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 
-type Product = {
-  id: number
-  title: string
-  price: number
-  description: string
-  category: string
-  image: string
-  rating: {
-    rate: number
-    count: number
-  }
-}
+import { Header } from '@/components/Header'
+import { HomeHeroCategories } from '@/components/HomeHeroCategories'
+import { TopBar } from '@/components/TopBar'
 
-type Categories =
-  | 'electronics'
-  | 'jewelry'
-  | "men's clothing"
-  | "women's clothing"
+import { Categories } from '@/types/Categories'
+import { Product } from '@/types/Product'
 
 type Props = {
   products: Product[]
   categories: Categories[]
-}
-
-interface CategoryLabelProps {
-  children: React.ReactNode
-}
-
-const CategoryLabel: React.FunctionComponent<CategoryLabelProps> = ({
-  children,
-}) => {
-  return (
-    <Flex
-      display='flex'
-      alignItems='center'
-      justifyContent='center'
-      height='100%'>
-      <Box
-        bgColor='white'
-        borderRadius='0.25rem'
-        fontWeight='bold'
-        padding='1.5rem 3rem'
-        position='relative'
-        textTransform='uppercase'
-        width='fit-content'
-        zIndex={1}>
-        {children}
-      </Box>
-    </Flex>
-  )
 }
 
 export default function Home({ products, categories }: Props) {
@@ -71,56 +26,7 @@ export default function Home({ products, categories }: Props) {
         <TopBar />
         <Header />
 
-        <Grid
-          gap='1rem'
-          templateColumns='540px 255px 255px'
-          templateRows='200px 260px'>
-          {categories.map((category, key) => {
-            const slugifiedCategory = slugify(category)
-            const imgCategoryUrl = `/images/pic-categories-${slugifiedCategory}.jpg`
-
-            if (key === 0) {
-              return (
-                <GridItem
-                  bg='red.500'
-                  h='100%'
-                  position='relative'
-                  rowSpan={2}
-                  w='100%'
-                  key={key}>
-                  <Image src={imgCategoryUrl} alt={category} fill={true} />
-                  <CategoryLabel>{category}</CategoryLabel>
-                </GridItem>
-              )
-            }
-
-            if (key === categories.length - 1) {
-              return (
-                <GridItem
-                  bg='gray.500'
-                  colSpan={2}
-                  h='100%'
-                  position='relative'
-                  w='100%'
-                  key={key}>
-                  <Image src={imgCategoryUrl} alt={category} fill={true} />
-                  <CategoryLabel>{category}</CategoryLabel>
-                </GridItem>
-              )
-            }
-            return (
-              <GridItem
-                bg='blue.500'
-                h='100%'
-                position='relative'
-                w='100%'
-                key={key}>
-                <Image src={imgCategoryUrl} alt={category} fill={true} />
-                <CategoryLabel>{category}</CategoryLabel>
-              </GridItem>
-            )
-          })}
-        </Grid>
+        <HomeHeroCategories categories={categories} />
 
         {/* <ol>
           {products.map((product) => {
