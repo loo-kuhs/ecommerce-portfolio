@@ -1,10 +1,9 @@
-import Head from 'next/head'
-
 import { Header } from '@/components/Header'
 import { TopBar } from '@/components/TopBar'
 import { slugify } from '@/utils/slugify'
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem } from '@chakra-ui/react'
 import { GetServerSidePropsContext } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 
 type Product = {
@@ -31,6 +30,34 @@ type Props = {
   categories: Categories[]
 }
 
+interface CategoryLabelProps {
+  children: React.ReactNode
+}
+
+const CategoryLabel: React.FunctionComponent<CategoryLabelProps> = ({
+  children,
+}) => {
+  return (
+    <Flex
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      height='100%'>
+      <Box
+        bgColor='white'
+        borderRadius='0.25rem'
+        fontWeight='bold'
+        padding='1.5rem 3rem'
+        position='relative'
+        textTransform='uppercase'
+        width='fit-content'
+        zIndex={1}>
+        {children}
+      </Box>
+    </Flex>
+  )
+}
+
 export default function Home({ products, categories }: Props) {
   return (
     <>
@@ -47,8 +74,7 @@ export default function Home({ products, categories }: Props) {
         <Grid
           gap='1rem'
           templateColumns='540px 255px 255px'
-          templateRows='200px 260px'
-        >
+          templateRows='200px 260px'>
           {categories.map((category, key) => {
             const slugifiedCategory = slugify(category)
             const imgCategoryUrl = `/images/pic-categories-${slugifiedCategory}.jpg`
@@ -61,9 +87,9 @@ export default function Home({ products, categories }: Props) {
                   position='relative'
                   rowSpan={2}
                   w='100%'
-                  key={key}
-                >
+                  key={key}>
                   <Image src={imgCategoryUrl} alt={category} fill={true} />
+                  <CategoryLabel>{category}</CategoryLabel>
                 </GridItem>
               )
             }
@@ -76,9 +102,9 @@ export default function Home({ products, categories }: Props) {
                   h='100%'
                   position='relative'
                   w='100%'
-                  key={key}
-                >
+                  key={key}>
                   <Image src={imgCategoryUrl} alt={category} fill={true} />
+                  <CategoryLabel>{category}</CategoryLabel>
                 </GridItem>
               )
             }
@@ -88,9 +114,9 @@ export default function Home({ products, categories }: Props) {
                 h='100%'
                 position='relative'
                 w='100%'
-                key={key}
-              >
+                key={key}>
                 <Image src={imgCategoryUrl} alt={category} fill={true} />
+                <CategoryLabel>{category}</CategoryLabel>
               </GridItem>
             )
           })}
