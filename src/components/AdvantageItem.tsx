@@ -1,4 +1,4 @@
-import { Flex, Grid, GridItem, Text } from '@chakra-ui/react'
+import { Grid, GridItem, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
 type Props = {
