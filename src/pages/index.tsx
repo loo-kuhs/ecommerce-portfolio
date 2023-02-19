@@ -1,7 +1,8 @@
 import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 
-import { Box, Container } from '@chakra-ui/react'
+import { Box, Container, Text } from '@chakra-ui/react'
 
 import { AdvantageSection } from '@/components/AdvantageSection'
 import { Header } from '@/components/Header'
@@ -36,7 +37,18 @@ export default function Home({ products, categories }: Props) {
           <AdvantageSection />
         </Container>
 
-        {/* <ol>
+        <Box margin='2rem 0' width='255px'>
+          <Image
+            src='https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'
+            width={200}
+            height={200}
+            alt=''
+          />
+          <Text>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</Text>
+          <Text>$ 109.95</Text>
+        </Box>
+
+        <ol>
           {products.map((product) => {
             return (
               <li key={product.id}>
@@ -44,7 +56,7 @@ export default function Home({ products, categories }: Props) {
               </li>
             )
           })}
-        </ol> */}
+        </ol>
       </main>
     </>
   )
