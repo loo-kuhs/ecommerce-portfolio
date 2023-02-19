@@ -2,7 +2,7 @@ import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Box, Container, Text } from '@chakra-ui/react'
+import { AspectRatio, Box, Container, Text } from '@chakra-ui/react'
 
 import { AdvantageSection } from '@/components/AdvantageSection'
 import { Header } from '@/components/Header'
@@ -42,12 +42,14 @@ export default function Home({ products, categories }: Props) {
           width='255px'
           border='1px solid'
           borderColor='gray.200'>
-          <Image
-            src='https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'
-            width={200}
-            height={200}
-            alt=''
-          />
+          <AspectRatio position='relative' ratio={1} maxWidth='100%'>
+            <Image
+              src='https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'
+              fill={true}
+              style={{ objectFit: 'contain' }}
+              alt=''
+            />
+          </AspectRatio>
           <Text>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</Text>
           <Text>$ 109.95</Text>
         </Box>
