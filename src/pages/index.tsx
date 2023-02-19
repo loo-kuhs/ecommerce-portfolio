@@ -1,13 +1,15 @@
 import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
 
+import { Box, Container, Flex } from '@chakra-ui/react'
+
 import { Header } from '@/components/Header'
 import { HomeHeroCategories } from '@/components/HomeHeroCategories'
 import { TopBar } from '@/components/TopBar'
 
 import { Categories } from '@/types/Categories'
 import { Product } from '@/types/Product'
-import { Box, Container } from '@chakra-ui/react'
+import { AdvantageItem } from '@/components/AdvantageItem'
 
 type Props = {
   products: Product[]
@@ -23,13 +25,31 @@ export default function Home({ products, categories }: Props) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <TopBar />
+      <Box marginBottom='2rem'>
+        <Header />
+      </Box>
       <main>
-        <TopBar />
-        <Box marginBottom='2rem'>
-          <Header />
-        </Box>
         <Container size='lg'>
           <HomeHeroCategories categories={categories} />
+
+          <Flex justifyContent='space-between'>
+            <AdvantageItem
+              title='Free shipping'
+              content='On all UA order or order above $100'
+              icon='/icon/ico-truck.svg'
+            />
+            <AdvantageItem
+              title='30 days return'
+              content='Simply return it within 30 days for an exchange'
+              icon='/icon/ico-return.svg'
+            />
+            <AdvantageItem
+              title='Support 24/7'
+              content='Contact us 24 hours a day, 7 days a week'
+              icon='/icon/ico-support.svg'
+            />
+          </Flex>
         </Container>
 
         {/* <ol>
