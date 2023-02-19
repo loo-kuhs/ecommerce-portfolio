@@ -33,7 +33,7 @@ export default function Home({ products, categories }: Props) {
         <Container size='lg'>
           <HomeHeroCategories categories={categories} />
 
-          <Flex justifyContent='space-between'>
+          <Flex justifyContent='space-between' margin='2rem 0'>
             <AdvantageItem
               title='Free shipping'
               content='On all UA order or order above $100'
