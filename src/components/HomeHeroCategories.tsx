@@ -14,7 +14,7 @@ type Props = {
 export const HomeHeroCategories = ({ categories }: Props) => {
   return (
     <Grid
-      gap='1rem'
+      gap='30px'
       templateColumns='540px 255px 255px'
       templateRows='200px 260px'>
       {categories.map((category, key) => {
