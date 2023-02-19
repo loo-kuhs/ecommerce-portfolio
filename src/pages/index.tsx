@@ -37,7 +37,11 @@ export default function Home({ products, categories }: Props) {
           <AdvantageSection />
         </Container>
 
-        <Box margin='2rem 0' width='255px'>
+        <Box
+          margin='2rem auto'
+          width='255px'
+          border='1px solid'
+          borderColor='gray.200'>
           <Image
             src='https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'
             width={200}
