@@ -1,11 +1,19 @@
 # Ecommerce Frontend
 
-## Description
+## About this project
 
 This is a frontend for an ecommerce website. It is built with Next,
 TypeScript, Chakra UI.
 
 This project consumes the [Fake Store API Backend](https://fakestoreapi.com/)
+
+### Project status
+
+> This project is still under development. It is not yet ready for production.
+>
+> ![Project status](https://img.shields.io/badge/status-under%20development-yellow?style=for-the-badge)
+> ![GitHub last commit](https://img.shields.io/github/last-commit/loo-kuhs/ecommerce-portfolio?style=for-the-badge)
+> ![GitHub size](https://img.shields.io/github/repo-size/loo-kuhs/ecommerce-portfolio?style=for-the-badge)
 
 ## Template
 
@@ -14,6 +22,22 @@ This frontend project is based on [Oleh Chabanov](https://www.behance.net/shaman
 > Template can be found [here](https://www.behance.net/gallery/111779465/MiStoFree-eCommerce-templateStoreShopMinimalist)
 
 ## Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/loo-kuhs/ecommerce-portfolio.git
+```
+
+Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
 
 First, run the development server:
 
