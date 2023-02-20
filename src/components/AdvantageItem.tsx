@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text } from '@chakra-ui/react'
+import { Grid, GridItem, Show, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
 type Props = {
@@ -9,7 +9,17 @@ type Props = {
 
 export function AdvantageItem({ title, content, icon }: Props) {
   return (
-    <Grid gridTemplateColumns='40px 1fr' alignItems='center' gap='1rem'>
+    <Grid
+      alignItems='center'
+      gap={{
+        base: '1rem',
+        sm: '0.5rem',
+      }}
+      gridTemplateColumns={{
+        base: '1fr',
+        sm: '40px 1fr',
+      }}
+      justifyItems='center'>
       <GridItem>
         <Image src={icon} width={40} height={40} alt='Truck 2D' />
       </GridItem>
@@ -17,7 +27,9 @@ export function AdvantageItem({ title, content, icon }: Props) {
         <Text textTransform='uppercase' fontSize='xs' fontWeight='bold'>
           {title}
         </Text>
-        <Text fontSize='xs'>{content}</Text>
+        <Show above='sm'>
+          <Text fontSize='xs'>{content}</Text>
+        </Show>
       </GridItem>
     </Grid>
   )
