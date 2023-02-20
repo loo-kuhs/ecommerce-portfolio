@@ -24,7 +24,12 @@ export const TopBar = () => {
             +38 (050) 12 34 567
           </Flex>
 
-          <Flex as={Link} href='#' alignItems='center' gap='0.5rem'>
+          <Flex
+            as={Link}
+            display={{ base: 'none', sm: 'flex' }}
+            href='#'
+            alignItems='center'
+            gap='0.5rem'>
             <Image
               src='/icon/ico-small-location.svg'
               alt=''
@@ -34,7 +39,12 @@ export const TopBar = () => {
             Ukraine, Kyiv, Khreshchatyk
           </Flex>
 
-          <Flex as={Link} href='#' alignItems='center' gap='0.5rem'>
+          <Flex
+            as={Link}
+            display={{ base: 'none', sm: 'flex' }}
+            href='#'
+            alignItems='center'
+            gap='0.5rem'>
             <Image
               src='/icon/ico-small-clock.svg'
               alt=''

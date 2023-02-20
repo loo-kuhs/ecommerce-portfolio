@@ -26,10 +26,13 @@ export default function Home({ products, categories }: Props) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
       <TopBar />
+
       <Box marginBottom='2rem'>
         <Header />
       </Box>
+      
       <main>
         <Container size='lg'>
           <HomeHeroCategories categories={categories} />
