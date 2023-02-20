@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Grid, GridItem, GridItemProps } from '@chakra-ui/react'
+import { Grid, GridItem } from '@chakra-ui/react'
 
 import { Categories } from '@/types/Categories'
 import { CenteredLabel } from './CenteredLabel'
@@ -14,30 +14,49 @@ type Props = {
 export const HomeHeroCategories = ({ categories }: Props) => {
   return (
     <Grid
-      gap='30px'
-      templateColumns='540px 255px 255px'
-      templateRows='200px 260px'>
-      {categories.map((category, key) => {
+      gap={{
+        base: '0.5rem',
+        sm: '30px',
+      }}
+      templateColumns={{
+        base: 'repeat(2, 1fr)',
+        sm: '540px 255px 255px',
+      }}
+      templateRows={{
+        base: '130px 154px 130px',
+        sm: '200px 260px',
+      }}
+      templateAreas={{
+        base: `
+          'cat1 cat1'
+          'cat2 cat3'
+          'cat4 cat4'`,
+        sm: `
+          'cat1 cat2 cat3'
+          'cat1 cat4 cat4'`,
+      }}>
+      {categories.map((category, index) => {
         const slugifiedCategory = slugify(category)
         const imgCategoryUrl = `/images/pic-categories-${slugifiedCategory}.jpg`
 
-        const gridItemProps: GridItemProps = {
-          position: 'relative',
-          w: '100%',
-          h: '100%',
-        }
-
-        if (key === 0) {
-          gridItemProps.rowSpan = 2
-        }
-
-        if (key === categories.length - 1) {
-          gridItemProps.colSpan = 2
-        }
-
+        // TODO: Fix the image size crop issue
         return (
-          <GridItem {...gridItemProps} key={key}>
-            <Image src={imgCategoryUrl} alt={category} fill={true} />
+          <GridItem
+            fontSize={{
+              base: '0.85rem',
+              sm: '1rem',
+            }}
+            gridArea={`cat${index + 1}`}
+            h='100%'
+            key={index}
+            position='relative'
+            w='100%'>
+            <Image
+              alt={category}
+              fill={true}
+              src={imgCategoryUrl}
+              style={{ objectFit: 'cover' }}
+            />
             <CenteredLabel>{category}</CenteredLabel>
           </GridItem>
         )

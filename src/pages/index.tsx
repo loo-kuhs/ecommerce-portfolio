@@ -32,7 +32,7 @@ export default function Home({ products, categories }: Props) {
       <Box marginBottom='2rem'>
         <Header />
       </Box>
-      
+
       <main>
         <Container size='lg'>
           <HomeHeroCategories categories={categories} />

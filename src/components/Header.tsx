@@ -11,16 +11,7 @@ import {
   MenuList,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-
-const menu = [
-  { name: 'About us', href: '#' },
-  { name: 'Women', href: '#' },
-  { name: 'Men', href: '#' },
-  { name: 'Beauty', href: '#' },
-  { name: 'Accessories', href: '#' },
-  { name: 'Blog', href: '#' },
-  { name: 'Contact', href: '#' },
-]
+import { menuHeader } from '@/utils/constants'
 
 export const Header = () => {
   return (
@@ -41,7 +32,7 @@ export const Header = () => {
                 variant='outline'
               />
               <MenuList>
-                {menu.map((item) => {
+                {menuHeader.map((item) => {
                   return (
                     <MenuItem key={item.name}>
                       <Link href={item.href}>{item.name}</Link>
@@ -60,7 +51,7 @@ export const Header = () => {
             display={{ base: 'none', sm: 'flex' }}
             listStyleType='none'
             gap='2rem'>
-            {menu.map((item) => {
+            {menuHeader.map((item) => {
               return (
                 <li key={item.name}>
                   <Link href={item.href}>{item.name}</Link>
