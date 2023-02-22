@@ -20,6 +20,8 @@ This project consumes the [Fake Store API Backend](https://fakestoreapi.com/)
 This frontend project is based on [Oleh Chabanov](https://www.behance.net/shamandesign) template.
 
 > Template can be found [here](https://www.behance.net/gallery/111779465/MiStoFree-eCommerce-templateStoreShopMinimalist)
+> 
+> Figma file can be found [here](https://www.figma.com/file/oRBqASopAgO1BpKvklO41u/MiSto-(eCommerce-template)-Minimalist-%26-Clean-design-by-Oleh-Chabanov?node-id=101%3A2829&t=DFi0CihFT26ZhuEO-1)
 
 ## Getting Started
 
