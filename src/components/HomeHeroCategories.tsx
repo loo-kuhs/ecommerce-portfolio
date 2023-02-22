@@ -16,22 +16,23 @@ export const HomeHeroCategories = ({ categories }: Props) => {
     <Grid
       gap={{
         base: '0.5rem',
-        sm: '30px',
+        md: '1rem',
+        lg: '2rem',
       }}
       templateColumns={{
         base: 'repeat(2, 1fr)',
-        sm: '540px 255px 255px',
+        md: '2fr repeat(2, 1fr)',
       }}
       templateRows={{
         base: '130px 154px 130px',
-        sm: '200px 260px',
+        md: '200px 260px',
       }}
       templateAreas={{
         base: `
           'cat1 cat1'
           'cat2 cat3'
           'cat4 cat4'`,
-        sm: `
+        md: `
           'cat1 cat2 cat3'
           'cat1 cat4 cat4'`,
       }}>
@@ -44,7 +45,7 @@ export const HomeHeroCategories = ({ categories }: Props) => {
           <GridItem
             fontSize={{
               base: '0.85rem',
-              sm: '1rem',
+              md: '1rem',
             }}
             gridArea={`cat${index + 1}`}
             h='100%'
