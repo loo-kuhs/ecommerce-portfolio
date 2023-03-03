@@ -34,7 +34,7 @@ export default function Home({ products, categories }: Props) {
       </Box>
 
       <main>
-        <Container size='lg'>
+        <Container size={{ lg: 'lg' }}>
           <HomeHeroCategories categories={categories} />
 
           <AdvantageSection />
@@ -57,7 +57,7 @@ export default function Home({ products, categories }: Props) {
           <Text>$ 109.95</Text>
         </Box>
 
-        <ol>
+        {/* <ol>
           {products.map((product) => {
             return (
               <li key={product.id}>
@@ -65,7 +65,7 @@ export default function Home({ products, categories }: Props) {
               </li>
             )
           })}
-        </ol>
+        </ol> */}
       </main>
     </>
   )

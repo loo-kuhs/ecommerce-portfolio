@@ -11,8 +11,9 @@ export const TopBar = () => {
         color='white'
         fontSize='xs'
         justifyContent='space-between'
-        alignItems='center'
-        size='lg'>
+        size={{
+          lg: 'lg',
+        }}>
         <Flex gap='1.5rem'>
           <Flex as={Link} href='#' alignItems='center' gap='0.5rem'>
             <Image

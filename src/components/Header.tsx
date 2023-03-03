@@ -21,9 +21,11 @@ export const Header = () => {
         as={Flex}
         alignItems='center'
         justifyContent='space-between'
-        size='lg'>
+        size={{
+          lg: 'lg',
+        }}>
         <Flex gap='0.5rem' margin='1rem 0'>
-          <Show below='sm'>
+          <Show below='lg'>
             <Box as='nav'>
               <Menu>
                 <MenuButton
@@ -47,7 +49,7 @@ export const Header = () => {
           <Image src='/images/logo.svg' alt='' width={100} height={48} />
         </Flex>
 
-        <Show above='sm'>
+        <Show above='lg'>
           <Box as='nav'>
             <Flex as='ul' listStyleType='none' gap='2rem'>
               {menuHeader.map((item) => {
